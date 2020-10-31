@@ -4,7 +4,6 @@ import { getEmojiDataFromNative, Emoji } from "emoji-mart";
 import data from "emoji-mart/data/all.json";
 import emojiRegex from "emoji-regex";
 
-
 const emojiUnicodeToColonsFormat = (platform, message) => {
   let output = message;
   let match = null;

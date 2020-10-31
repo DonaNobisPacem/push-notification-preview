@@ -4,7 +4,8 @@ const DefaultAppleStyles = {
     minWidth: "325px"
   },
   cardNotification: {
-    backgroundColor: "white",
+    backgroundColor: "transparent",
+    backdropFilter: 'blur(10px)',
     borderRadius: "15px",
     padding: "16px",
     fontSize: "16px",
@@ -14,7 +15,7 @@ const DefaultAppleStyles = {
     display: "block",
     fontWeight: 400,
     margin: "0px",
-    color: "#555555",
+    color: 'white',
   },
   header: {
     display: "flex"
@@ -33,7 +34,7 @@ const DefaultAppleStyles = {
     height: "15px"
   },
   notificationText: {
-    width: '100%'
+    width: '100%',
   },
   notificationTextWithImage: {
     width: 'calc( 100% - 70px )'
@@ -69,7 +70,8 @@ const DefaultAppleStyles = {
     "-webkit-box-orient": "vertical"
   },
   cardNotificationWithImage: {
-    backgroundColor: "white",
+    // backgroundColor: "white",
+    backdropFilter: 'blur(10px)',
     borderRadius: "15px 15px 0px 0px",
     padding: "16px",
     fontSize: "16px",

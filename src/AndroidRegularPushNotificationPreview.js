@@ -1,133 +1,127 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
-import withStyles from "@material-ui/core/styles/withStyles";
+import {makeStyles} from "@material-ui/core/styles";
 import { Grid, IconButton } from "@material-ui/core";
 import Notifications from "@material-ui/icons/Notifications";
 import KeyboardArrowUp from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDown from "@material-ui/icons/KeyboardArrowDown";
 import DefaultAndroidStyles from "./DefaultAndroidStyles";
 
-class AndroidRegularPushNotificationPreview extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      expand: false
-    };
-  }
+const useStyles = makeStyles(DefaultAndroidStyles);
 
-  render() {
-    const { expand } = this.state;
-    const {
-      classes,
-      appName,
-      time,
-      message,
-      title,
-      color,
-      AppIcon
-    } = this.props;
-    const loadAppIcon = () => (
-      <AppIcon className={classes.appIcon} style={{ color: color }} />
-    );
-    const maxDivWidth = 8.5 * (appName.length + time.length) + 64;
+function AndroidRegularPushNotificationPreview(props) {
 
-    return (
-      <Grid container direction="row" className={classes.root}>
-        <Grid item xs={12} className={classes.cardNotification}>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="center"
-            spacing={1}
-          >
-            <Grid item xs={12} className={classes.header}>
+  const classes = useStyles();
+  const [expand, setExpand] = useState(false);
+  const {
+    appName,
+    time,
+    message,
+    title,
+    color,
+    AppIcon
+  } = props;
+  const loadAppIcon = () => (
+    <AppIcon className={classes.appIcon} style={{ color: color }} />
+  );
+  const maxDivWidth = 8.5 * (appName.length + time.length) + 64;
+
+  return (
+    <Grid container direction="row" className={classes.root}>
+      <Grid item xs={12} className={classes.cardNotification}>
+        <Grid
+          container
+          direction="row"
+          justify="flex-start"
+          alignItems="center"
+          spacing={1}
+        >
+          <Grid item xs={12} className={classes.header}>
+            <Grid
+              container
+              direction="row"
+              alignItems="center"
+              justify="flex-start"
+              spacing={1}
+              style={{
+                whiteSpace: "nowrap"
+              }}
+            >
+              <Grid item>{loadAppIcon()}</Grid>
               <Grid
-                container
-                direction="row"
-                alignItems="center"
-                justify="flex-start"
-                spacing={1}
-                style={{
-                  whiteSpace: "nowrap"
-                }}
+                item
+                className={classes.appNameText}
+                style={{ color: color }}
               >
-                <Grid item>{loadAppIcon()}</Grid>
+                {appName}
+              </Grid>
+              {!expand && (
                 <Grid
                   item
-                  className={classes.appNameText}
-                  style={{ color: color }}
+                  style={{
+                    maxWidth: `calc(100% - ${maxDivWidth}px)`
+                  }}
                 >
-                  {appName}
+                  <span className={classes.notificationPreview}>{title || message}</span>
                 </Grid>
-                {!expand && (
-                  <Grid
-                    item
-                    style={{
-                      maxWidth: `calc(100% - ${maxDivWidth}px)`
-                    }}
-                  >
-                    <span className={classes.notificationPreview}>{title || message}</span>
+              )}
+              <Grid item>{time}</Grid>
+              <Grid item>
+                <IconButton
+                  onClick={() => {
+                    setExpand(!expand);
+                  }}
+                  size="small"
+                >
+                  {expand ? (
+                    <KeyboardArrowUp className={classes.controlIcon} />
+                  ) : (
+                    <KeyboardArrowDown className={classes.controlIcon} />
+                  )}
+                </IconButton>
+              </Grid>
+            </Grid>
+          </Grid>
+          {expand && (
+            <Grid item xs={12}>
+              <Grid container alignItems="flex-start">
+                <Grid item xs={12}>
+                  <Grid item xs={12} className={classes.notificationTitle}>
+                    {title}
                   </Grid>
-                )}
-                <Grid item>{time}</Grid>
-                <Grid item>
-                  <IconButton
-                    onClick={() => {
-                      this.setState({ expand: !expand });
-                    }}
-                    size="small"
-                  >
-                    {expand ? (
-                      <KeyboardArrowUp className={classes.controlIcon} />
-                    ) : (
-                      <KeyboardArrowDown className={classes.controlIcon} />
-                    )}
-                  </IconButton>
+                  {message && (
+                    <Grid
+                      item
+                      xs={12}
+                      className={
+                        expand
+                          ? classes.notificationMessage
+                          : classes.notificationMessagePreview
+                      }
+                    >
+                      {message}
+                    </Grid>
+                  )}
                 </Grid>
               </Grid>
             </Grid>
-            {expand && (
-              <Grid item xs={12}>
-                <Grid container alignItems="flex-start">
-                  <Grid item xs={12}>
-                    <Grid item xs={12} className={classes.notificationTitle}>
-                      {title}
-                    </Grid>
-                    {message && (
-                      <Grid
-                        item
-                        xs={12}
-                        className={
-                          expand
-                            ? classes.notificationMessage
-                            : classes.notificationMessagePreview
-                        }
-                      >
-                        {message}
-                      </Grid>
-                    )}
-                  </Grid>
-                </Grid>
-              </Grid>
-            )}
-          </Grid>
-        </Grid>
-        <Grid item xs={12} className={classes.cardFooter}>
-          <Grid
-            container
-            direction="row"
-            justify="flex-end"
-            alignItems="center"
-            spacing={3}
-          >
-            <Grid item>Notification settings</Grid>
-            <Grid item>Clear</Grid>
-          </Grid>
+          )}
         </Grid>
       </Grid>
-    );
-  }
+      <Grid item xs={12} className={classes.cardFooter}>
+        <Grid
+          container
+          direction="row"
+          justify="flex-end"
+          alignItems="center"
+          spacing={3}
+        >
+          <Grid item>Notification settings</Grid>
+          <Grid item>Clear</Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
 }
 
 AndroidRegularPushNotificationPreview.propTypes = {
@@ -145,6 +139,5 @@ AndroidRegularPushNotificationPreview.defaultProps = {
   AppIcon: Notifications
 };
 
-export default withStyles(DefaultAndroidStyles)(
-  AndroidRegularPushNotificationPreview
-);
+export default AndroidRegularPushNotificationPreview;
+

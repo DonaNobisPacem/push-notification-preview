@@ -25,21 +25,27 @@
     "dist/*"
   ],
   "dependencies": {
-    "react": "^16.10.0",
-    "webfontloader": "^1.6.28",
-    "@material-ui/core": "^4.4.3",
-    "@material-ui/icons": "^4.4.3",
+    "emoji-mart": "^3.0.0",
+    "emoji-regex": "^9.2.0",
     "lodash": "^4.17.15",
-    "emoji-mart": "^2.11.1",
-    "emoji-regex": "^8.0.0"
+    "prop-types": "^15.7.2",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "@babel/preset-react": "^7.0.0",
-    "react": "^16.10.0",
-    "react-dom": "^16.10.0"
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1"
   },
   "author": "mvalimento",
   "license": "MIT",

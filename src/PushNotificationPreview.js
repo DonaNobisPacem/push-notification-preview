@@ -3,25 +3,23 @@ import PropTypes from "prop-types";
 import AndroidPushNotificationPreview from "./AndroidPushNotificationPreview";
 import ApplePushNotificationPreview from "./ApplePushNotificationPreview";
 
-class PushNotificationPreview extends React.Component {
-  render() {
-    const { platform } = this.props;
+function PushNotificationPreview(props) {
+  const { platform } = props;
 
-    return (
-      <React.Fragment>
-        {platform==='android' &&
-            <AndroidPushNotificationPreview
-            {...this.props}
-            />
-        }
-        {platform==='apple' &&
-            <ApplePushNotificationPreview
-            {...this.props}
-            />
-        }
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      {platform==='android' &&
+          <AndroidPushNotificationPreview
+          {...props}
+          />
+      }
+      {platform==='apple' &&
+          <ApplePushNotificationPreview
+          {...props}
+          />
+      }
+    </React.Fragment>
+  );
 }
 
 PushNotificationPreview.propTypes = {
