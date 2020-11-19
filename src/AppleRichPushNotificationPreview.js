@@ -95,14 +95,7 @@ function AppleRichPushNotificationPreview(props) {
                   </Grid>
                 </Grid>
                 <Grid item style={{ overflow: "hidden", color: 'rgb( 224, 74, 65)' }}>
-                  {expand ? (
-                    <MoreHoriz
-                      fontSize="large"
-                      className={classes.moreIcon}
-                    />
-                  ) : (
-                    time
-                  )}
+                  {time}
                 </Grid>
               </Grid>
             </Grid>
