@@ -92,7 +92,7 @@ function AndroidRichPushNotificationPreview(props) {
                       {parseEmojis(title, "google")}
                     </Grid>
                   }
-                  {message && (expand || !messageInTooltip) &&
+                  {message &&
                     <Grid
                       item
                       xs={12}
