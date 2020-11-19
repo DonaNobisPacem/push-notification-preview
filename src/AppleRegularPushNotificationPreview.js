@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Button, Fab } from "@material-ui/core";
 import Close from "@material-ui/icons/Close";
-import MoreHoriz from "@material-ui/icons/MoreHoriz";
 import Notifications from "@material-ui/icons/Notifications";
 import DefaultAppleStyles from "./DefaultAppleStyles";
 
@@ -72,47 +71,32 @@ function AppleRegularPushNotificationPreview(props) {
                     justify="flex-start"
                     spacing={1}
                   >
-                    <Grid item>{loadAppIcon()}</Grid>
+                    <Grid item style={{ paddingBottom: 0 }}>{loadAppIcon()}</Grid>
                     <Grid
                       item
                       className={classes.appNameText}
-                      style={{ color: color }}
+                      style={{ color: 'rgb( 224, 74, 65)' }}
                     >
                       {appName}
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid item style={{ height: "26px", overflow: "hidden" }}>
-                  {expand ? (
-                    <MoreHoriz
-                      fontSize="large"
-                      className={classes.moreIcon}
-                    />
-                  ) : (
-                    time
-                  )}
+                <Grid item style={{ overflow: "hidden", color: 'rgb( 224, 74, 65)' }}>
+                  {time}
                 </Grid>
               </Grid>
             </Grid>
             <Grid
               item
               xs={12}
-              className={
-                expand
-                  ? classes.notificationTitle
-                  : classes.notificationTitlePreview
-              }
+              className={classes.notificationTitlePreview}
             >
               {title}
             </Grid>
             <Grid
               item
               xs={12}
-              className={
-                expand
-                  ? classes.notificationMessage
-                  : classes.notificationMessagePreview
-              }
+              className={classes.notificationMessagePreview}
             >
               {message}
             </Grid>

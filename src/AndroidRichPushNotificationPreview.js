@@ -54,47 +54,34 @@ function AndroidRichPushNotificationPreview(props) {
                 whiteSpace: "nowrap"
               }}
             >
-              <Grid item>{loadAppIcon()}</Grid>
+              <Grid item style={{ paddingBottom: 0 }}>{loadAppIcon()}</Grid>
               <Grid
                 item
                 className={classes.appNameText}
                 style={{ color: color }}
               >
-                {appName}
+                {appName} &bull; {time}
               </Grid>
-              {!expand &&
-                messageInTooltip && (
-                  <Grid
-                    item
-                    style={{
-                      maxWidth: `calc(100% - ${maxDivWidth}px)`
-                    }}
-                  >
-                    <span className={classes.notificationPreview}>
-                      {message}
-                    </span>
-                  </Grid>
-                )}
-              <Grid item>{time}</Grid>
-              <Grid item>
-                <IconButton
+            </Grid>
+            <Grid item>
+              <IconButton
                   onClick={() => {
                     setExpand(!expand);
                   }}
                   size="small"
-                >
-                  {expand ? (
+              >
+                {expand ? (
                     <KeyboardArrowUp className={classes.controlIcon} />
-                  ) : (
+                ) : (
                     <KeyboardArrowDown className={classes.controlIcon} />
-                  )}
-                </IconButton>
-              </Grid>
+                )}
+              </IconButton>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ paddingTop: 0, paddingBottom: 0 }}>
             <Grid container alignItems="flex-start" justify="space-between">
-              <Grid item className={image && !expand ? classes.notificationTextWithImage : classes.notificationText}>
+              <Grid item className={image && !expand ? classes.notificationTextWithImage : classes.notificationText}
+                    style={{ paddingTop: 0, paddingBottom: 0, lineHeight: '20px' }}>
                 <Grid container alignItems="flex-start">
                   {title &&
                     <Grid
@@ -109,7 +96,11 @@ function AndroidRichPushNotificationPreview(props) {
                     <Grid
                       item
                       xs={12}
-                      className={classes.notificationMessage}
+                      className={
+                        expand
+                            ? classes.notificationMessage
+                            : classes.notificationMessagePreview
+                      }
                     >
                       {parseEmojis(message, "google")}
                     </Grid>
@@ -147,24 +138,22 @@ function AndroidRichPushNotificationPreview(props) {
               <Grid
                 container
                 direction="row"
+                justify="flex-start"
                 alignItems="center"
-                justify="space-around"
-                spacing={1}
+                spacing={2}
                 style={{
                   whiteSpace: "nowrap"
                 }}
               >
                 <React.Fragment>
                   {_.map(actionButtons, button => (
-                    <Button key={`actionButtons-${button}`}>
-                      <Grid
-                        item
-                        className={classes.notificationActions}
-                        style={{ color: color }}
-                      >
-                        {button}
-                      </Grid>
-                    </Button>
+                    <Grid
+                      item
+                      className={classes.notificationActions}
+                      style={{ color: color }}
+                    >
+                      {button}
+                    </Grid>
                   ))}
                 </React.Fragment>
               </Grid>

@@ -6,9 +6,9 @@ const DefaultAndroidStyles = {
   },
   cardNotification: {
     backgroundColor: "white",
-    borderRadius: "20px 20px 0px 0px",
-    padding: "16px 24px",
-    fontSize: "16px",
+    borderRadius: "8px",
+    padding: "16px",
+    fontSize: "14px",
     lineHeight: "24px",
     fontWeight: 400,
     letterSpacing: "0.1px",
@@ -17,6 +17,7 @@ const DefaultAndroidStyles = {
     textAlign: "left"
   },
   header: {
+    padding: '0 4px 4px 4px !important',
     fontSize: "14px",
     display: "flex"
   },
@@ -40,7 +41,6 @@ const DefaultAndroidStyles = {
     fontWeight: 600,
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
-    marginBottom: "5px",
     overflow: "hidden"
   },
   notificationPreview: {
@@ -66,8 +66,8 @@ const DefaultAndroidStyles = {
   },
   notificationActions: {
     textTransform: "capitalize",
-    fontWeight: 800,
-    fontSize: "15px"
+    fontWeight: 600,
+    fontSize: "14px"
   },
   notificationImagePreview: {
     float: "right",
@@ -84,14 +84,11 @@ const DefaultAndroidStyles = {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat"
   },
-  cardFooter: {
-    backgroundColor: "white",
-    borderRadius: "0px 0px 20px 20px",
-    padding: "16px 24px",
+  actionButtons: {
+    marginTop: 5,
     fontWeight: 600,
     color: "gray",
     fontSize: "14px",
-    marginTop: "2px"
   }
 };
 export default DefaultAndroidStyles;

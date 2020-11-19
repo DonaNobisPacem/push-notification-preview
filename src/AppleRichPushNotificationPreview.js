@@ -84,17 +84,17 @@ function AppleRichPushNotificationPreview(props) {
                     justify="flex-start"
                     spacing={1}
                   >
-                    <Grid item>{loadAppIcon()}</Grid>
+                    <Grid item style={{ paddingBottom: 0 }}>{loadAppIcon()}</Grid>
                     <Grid
                       item
                       className={classes.appNameText}
-                      style={{ color: color }}
+                      style={{ color: 'rgb( 224, 74, 65)' }}
                     >
                       {appName}
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid item style={{ height: "26px", overflow: "hidden" }}>
+                <Grid item style={{ overflow: "hidden", color: 'rgb( 224, 74, 65)' }}>
                   {expand ? (
                     <MoreHoriz
                       fontSize="large"
@@ -113,11 +113,7 @@ function AppleRichPushNotificationPreview(props) {
                     <Grid
                       item
                       xs={12}
-                      className={
-                        expand
-                          ? classes.notificationTitle
-                          : classes.notificationTitlePreview
-                      }
+                      className={classes.notificationTitlePreview}
                     >
                       {parseEmojis(title, "apple")}
                     </Grid>
@@ -126,11 +122,7 @@ function AppleRichPushNotificationPreview(props) {
                     <Grid
                       item
                       xs={12}
-                      className={
-                        expand
-                          ? classes.notificationMessage
-                          : classes.notificationMessagePreview
-                      }
+                      className={classes.notificationMessagePreview}
                     >
                       {parseEmojis(message, "apple")}
                     </Grid>

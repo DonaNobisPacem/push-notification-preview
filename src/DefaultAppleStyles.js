@@ -4,10 +4,10 @@ const DefaultAppleStyles = {
     minWidth: "325px"
   },
   cardNotification: {
-    backgroundColor: "transparent",
+    backgroundColor: 'rgba( 255, 255, 255, 0.3)',
     backdropFilter: 'blur(10px)',
     borderRadius: "15px",
-    padding: "16px",
+    padding: "10px",
     fontSize: "16px",
     lineHeight: "24px",
     letterSpacing: "0.1px",
@@ -23,10 +23,11 @@ const DefaultAppleStyles = {
   appIcon: {
     width: "18px",
     height: "18px",
-    color: "black"
+    color: "black",
   },
   appNameText: {
     fontSize: "14px",
+    color: 'rgba( 255, 255, 255, 0.3)',
     textTransform: "uppercase"
   },
   controlIcon: {
@@ -41,22 +42,24 @@ const DefaultAppleStyles = {
   },
   notificationTitlePreview: {
     fontWeight: 600,
-    textOverflow: "ellipsis",
+    color: 'rgb(29, 27, 38)',
+    // textOverflow: "ellipsis",
     whiteSpace: "nowrap",
-    overflow: "hidden",
+    // overflow: "hidden",
     marginTop: "2px"
   },
   notificationTitle: {
     fontSize: "18px",
     fontWeight: 700,
-    textOverflow: "ellipsis",
+    // textOverflow: "ellipsis",
     whiteSpace: "nowrap",
-    overflow: "hidden",
+    // overflow: "hidden",
     marginTop: "10px",
     marginBottom: "5px"
   },
   notificationMessagePreview: {
     lineHeight: "20px",
+    color: 'rgb(29, 27, 38)',
     overflow: "hidden",
     display: "-webkit-box",
     "-webkit-line-clamp": 4,
@@ -70,7 +73,7 @@ const DefaultAppleStyles = {
     "-webkit-box-orient": "vertical"
   },
   cardNotificationWithImage: {
-    // backgroundColor: "white",
+    backgroundColor: 'rgba( 255, 255, 255, 0.3)',
     backdropFilter: 'blur(10px)',
     borderRadius: "15px 15px 0px 0px",
     padding: "16px",
@@ -131,7 +134,7 @@ const DefaultAppleStyles = {
   closeIcon: {
     height: "35px",
     width: "35px",
-    backgroundColor: "white",
+    backgroundColor: 'rgba( 255, 255, 255, 0.3)',
     margin: "5px 15px"
   },
   moreIcon: {
