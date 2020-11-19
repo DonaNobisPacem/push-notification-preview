@@ -37,7 +37,7 @@ function AppleRegularPushNotificationPreview(props) {
             className={classes.closeIcon}
             onClick={() => setExpand(!expand)}
           >
-            <Close />
+            <Close style={{ color: 'rgb( 224, 74, 65)' }} />
           </Fab>
         </Grid>
       )}

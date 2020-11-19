@@ -161,18 +161,6 @@ function AndroidRichPushNotificationPreview(props) {
           )}
         </Grid>
       </Grid>
-      <Grid item xs={12} className={classes.cardFooter}>
-        <Grid
-          container
-          direction="row"
-          justify="flex-end"
-          alignItems="center"
-          spacing={3}
-        >
-          <Grid item>Notification settings</Grid>
-          <Grid item>Clear</Grid>
-        </Grid>
-      </Grid>
     </Grid>
   );
 }
