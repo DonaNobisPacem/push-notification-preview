@@ -79,7 +79,7 @@ function AppleRegularPushNotificationPreview(props) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_Close["default"], {
     style: {
-      color: 'rgb( 224, 74, 65)'
+      color: 'black'
     }
   }))), /*#__PURE__*/_react["default"].createElement(_core.Button, {
     className: classes.clickableNotification,
@@ -125,13 +125,13 @@ function AppleRegularPushNotificationPreview(props) {
     item: true,
     className: classes.appNameText,
     style: {
-      color: 'rgb( 224, 74, 65)'
+      color: 'rgb(85, 85, 85)'
     }
   }, appName))), /*#__PURE__*/_react["default"].createElement(_core.Grid, {
     item: true,
     style: {
       overflow: "hidden",
-      color: 'rgb( 224, 74, 65)'
+      color: 'rgb(85, 85, 85)'
     }
   }, time))), /*#__PURE__*/_react["default"].createElement(_core.Grid, {
     item: true,
