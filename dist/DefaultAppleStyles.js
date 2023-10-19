@@ -10,7 +10,7 @@ var DefaultAppleStyles = {
     minWidth: "325px"
   },
   cardNotification: {
-    backgroundColor: 'rgba( 255, 255, 255, 0.3)',
+    backgroundColor: 'white',
     backdropFilter: 'blur(10px)',
     borderRadius: "15px",
     padding: "10px",
